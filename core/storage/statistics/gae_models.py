@@ -1573,7 +1573,7 @@ class PlaythroughModel(base_models.BaseModel):
     issue_customization_args = datastore_services.JsonProperty(required=True)
     # The playthrough actions for this playthrough. This will be a list of dicts
     # where each dict represents a single playthrough action. The list is
-    # ordered by the time of occurence of the action.
+    # ordered by the time of occurrence of the action.
     actions = datastore_services.JsonProperty(repeated=True)
 
     @staticmethod
@@ -1644,7 +1644,7 @@ class PlaythroughModel(base_models.BaseModel):
                 given issue_type.
             actions: list(dict). The playthrough actions for this playthrough.
                 This will be a list of dicts where each dict represents a single
-                playthrough action. The list is ordered by the time of occurence
+                playthrough action. The list is ordered by the time of occurrence
                 of the action.
 
         Returns:
