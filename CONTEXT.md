@@ -22,7 +22,7 @@
 - Healthy. Big clean-up campaigns (style-tag cleanup parts) ongoing — avoid those specific areas.
 
 ## Gap ledger
-- (none yet)
+- `2026-09-03` self-found gap (trivial pass) - outcome pr-opened (https://github.com/olitreadwell/oppia/pull/1) - lesson: en.json/UI strings clean; genuine typos live in comments/docstrings; oppia CI not connected to forks so fork shows no runs.
 
 ## Mined gaps
 - none yet — this run does a trivial-fix pass (typos/dead links/stale commands) per engine/loop-trivial.sh.
