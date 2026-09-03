@@ -1365,7 +1365,7 @@ export class BaseUser {
               'diff-snapshots'
             )
           : path.join(testPath, dirName, 'diff-snapshots'),
-        storeReceivedOnFailure: true, // Store the new screenshots seperately from the composed diff screenshots on failure.
+        storeReceivedOnFailure: true, // Store the new screenshots separately from the composed diff screenshots on failure.
         customReceivedDir: runningInCI
           ? path.join(
               testConstants.TEST_SNAPSHOTS_DIR,
