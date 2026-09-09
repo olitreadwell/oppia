@@ -26,3 +26,4 @@
 
 ## Mined gaps
 - none yet — this run does a trivial-fix pass (typos/dead links/stale commands) per engine/loop-trivial.sh.
+- `2026-09-09` self-found gap (trivial pass #2) - outcome pr-opened (https://github.com/olitreadwell/oppia/pull/11) - lesson: second typo pass found 31 more genuine misspellings across 10 files (comments/docstrings/error messages); en.json/UI strings still clean; oppia CI not connected to forks so fork shows no runs.
