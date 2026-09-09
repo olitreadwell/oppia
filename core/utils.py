@@ -345,7 +345,7 @@ def get_random_choice(alist: List[T]) -> T:
         alist: list(*). Input to get a random choice.
 
     Returns:
-        *. Random element choosen from the passed input list.
+        *. Random element chosen from the passed input list.
     """
     assert (
         isinstance(alist, list) and len(alist) > 0
@@ -698,7 +698,7 @@ def get_human_readable_time_string(time_msec: float) -> str:
         str. A string representing the time.
     """
     # Ignoring arg-type because we are preventing direct usage of 'str' for
-    # Python3 compatibilty.
+    # Python3 compatibility.
 
     assert time_msec >= 0, 'Time cannot be negative'
     return time.strftime('%B %d %H:%M:%S', time.gmtime(time_msec / 1000.0))
