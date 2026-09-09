@@ -29,8 +29,6 @@ Material CSS doc: https://docs.google.com/document/d/1UoCOC7XNhCZrWIMPAoR5Xex28O
 
 ### Steps to generate oppia-material.css file:
 
-Video: https://drive.google.com/file/d/1bRA0824CV6cDNYANcX2KT4skNilKdynh/view?usp=sharing
-
 1. Clone angular components: `git clone https://github.com/angular/components.git`
 2. `cd components`
 3. `cd src/material/core/theming/prebuilt/`

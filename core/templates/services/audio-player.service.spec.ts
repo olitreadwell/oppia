@@ -387,7 +387,7 @@ describe('AudioPlayerService', () => {
       expect(console.error).not.toHaveBeenCalled();
     }));
 
-    it('should not foward track when seek does not return an number', fakeAsync(() => {
+    it('should not forward track when seek does not return an number', fakeAsync(() => {
       audioPlayerService.loadAsync('test.mp3');
       flushMicrotasks();
 

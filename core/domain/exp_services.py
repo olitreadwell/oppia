@@ -3806,7 +3806,7 @@ def regenerate_missing_stats_for_exploration(
                 exp_stats_list_item = exp_stats_list[i]
                 assert exp_stats_list_item is not None
                 # In early schema versions of ExplorationModel, the END
-                # card was a persistant, implicit state present in every
+                # card was a persistent, implicit state present in every
                 # exploration. The snapshots of these old explorations have
                 # since been migrated but they do not have corresponding state
                 # stats models for the END state. So for such versions, a

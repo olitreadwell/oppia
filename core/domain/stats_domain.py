@@ -1981,7 +1981,7 @@ class StateAnswersCalcOutput:
 
     def validate(self) -> None:
         """Validates StateAnswersCalcOutputModel domain object entity before
-        it is commited to storage.
+        it is committed to storage.
         """
 
         # There is a danger of data overflow if answer_opts exceeds 1MB. This

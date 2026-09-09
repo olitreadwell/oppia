@@ -79,7 +79,7 @@ class FirebaseProxyPage(base.BaseHandler[Dict[str, str], Dict[str, str]]):
         self.response.body = response.content
 
     # Here we use type Any because we accept any number/type of args
-    # to accomodate all firebase requests.
+    # to accommodate all firebase requests.
     @acl_decorators.open_access
     def get(
         self, *args: Any, **kwargs: Any  # pylint: disable=unused-argument
@@ -88,7 +88,7 @@ class FirebaseProxyPage(base.BaseHandler[Dict[str, str], Dict[str, str]]):
         self._firebase_proxy()
 
     # Here we use type Any because we accept any number/type of args
-    # to accomodate all firebase requests.
+    # to accommodate all firebase requests.
     @acl_decorators.open_access
     def post(
         self, *args: Any, **kwargs: Any  # pylint: disable=unused-argument
