@@ -387,7 +387,7 @@ describe('Version history service', () => {
     expect(versionHistoryService.canShowBackwardMetadataDiffData()).toBe(true);
   });
 
-  it('should get whether we should show foward state diff data', () => {
+  it('should get whether we should show forward state diff data', () => {
     expect(versionHistoryService.canShowForwardStateDiffData()).toBe(false);
 
     const stateObject: StateBackendDict = {
@@ -442,7 +442,7 @@ describe('Version history service', () => {
     expect(versionHistoryService.canShowForwardStateDiffData()).toBe(true);
   });
 
-  it('should get whether we should show foward metadata diff data', () => {
+  it('should get whether we should show forward metadata diff data', () => {
     expect(versionHistoryService.canShowForwardMetadataDiffData()).toBe(false);
 
     const explorationMetadata = new ExplorationMetadata(
