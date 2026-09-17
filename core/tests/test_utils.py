@@ -3235,7 +3235,7 @@ version: 1
         """Convert a JSON server response to an object (such as a dict).
 
         Args:
-            json_response: webtest.TestResponse. The test reponse.
+            json_response: webtest.TestResponse. The test response.
             expect_errors: bool. Whether errors are expected.
 
         Returns:

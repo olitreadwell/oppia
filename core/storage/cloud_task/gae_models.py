@@ -92,7 +92,7 @@ class CloudTaskRunModel(base_models.BaseModel):
         required=False, indexed=True
     )
 
-    # The task_id is the ID of the cloud task run. Added as a seperate
+    # The task_id is the ID of the cloud task run. Added as a separate
     # property to allow for easier querying of tasks by their ID.
     task_id = datastore_services.StringProperty(
         required=True, indexed=True, default=None
