@@ -88,7 +88,7 @@ class BlogPostViewedEventLogEntryModel(base_models.BaseModel):
     def get_model_association_to_user() -> (
         base_models.MODEL_ASSOCIATION_TO_USER
     ):
-        """Model does not contain neccessary information for user for
+        """Model does not contain necessary information for user for
         takeout.
         """
         return base_models.MODEL_ASSOCIATION_TO_USER.NOT_CORRESPONDING_TO_USER
@@ -160,7 +160,7 @@ class BlogPostReadEventLogEntryModel(base_models.BaseModel):
     def get_model_association_to_user() -> (
         base_models.MODEL_ASSOCIATION_TO_USER
     ):
-        """Model does not contain neccessary information for user for
+        """Model does not contain necessary information for user for
         takeout.
         """
         return base_models.MODEL_ASSOCIATION_TO_USER.NOT_CORRESPONDING_TO_USER
@@ -244,7 +244,7 @@ class BlogPostExitedEventLogEntryModel(base_models.BaseModel):
     def get_model_association_to_user() -> (
         base_models.MODEL_ASSOCIATION_TO_USER
     ):
-        """Model does not contain neccessary information for user for
+        """Model does not contain necessary information for user for
         takeout.
         """
         return base_models.MODEL_ASSOCIATION_TO_USER.NOT_CORRESPONDING_TO_USER
@@ -609,7 +609,7 @@ class AuthorBlogPostViewsAggregatedStatsModel(base_models.BaseModel):
     def get_model_association_to_user() -> (
         base_models.MODEL_ASSOCIATION_TO_USER
     ):
-        """Model does not contain neccessary information for user for
+        """Model does not contain necessary information for user for
         takeout.
         """
         return base_models.MODEL_ASSOCIATION_TO_USER.NOT_CORRESPONDING_TO_USER
@@ -727,7 +727,7 @@ class AuthorBlogPostAggregatedReadingTimeModel(base_models.BaseModel):
     def get_model_association_to_user() -> (
         base_models.MODEL_ASSOCIATION_TO_USER
     ):
-        """Model does not contain neccessary information for user for
+        """Model does not contain necessary information for user for
         takeout.
         """
         return base_models.MODEL_ASSOCIATION_TO_USER.NOT_CORRESPONDING_TO_USER
@@ -846,7 +846,7 @@ class AuthorBlogPostReadsAggregatedStatsModel(base_models.BaseModel):
     def get_model_association_to_user() -> (
         base_models.MODEL_ASSOCIATION_TO_USER
     ):
-        """Model does not contain neccessary information for user for
+        """Model does not contain necessary information for user for
         takeout.
         """
         return base_models.MODEL_ASSOCIATION_TO_USER.NOT_CORRESPONDING_TO_USER

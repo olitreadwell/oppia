@@ -122,7 +122,7 @@ class CalculationUnitTestBase(test_utils.GenericTestBase):
         }
 
     def _get_calculation_instance(self) -> answer_models.BaseCalculation:
-        """Requires the existance of the class constant: CALCULATION_ID."""
+        """Requires the existence of the class constant: CALCULATION_ID."""
         return calculation_registry.Registry.get_calculation_by_id(
             self.CALCULATION_ID
         )

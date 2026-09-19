@@ -139,7 +139,7 @@ class BaseInteraction:
     # relevant for supplemental interactions.
     instructions: Optional[str] = None
     # Instructions for using this interaction, to be shown to the learner. Only
-    # shows up when view port is narrow. Only relevent for supplemental
+    # shows up when view port is narrow. Only relevant for supplemental
     # interactions.
     narrow_instructions: Optional[str] = None
     # Whether the answer is long, and would benefit from being summarized.
