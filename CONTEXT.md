@@ -22,6 +22,7 @@
 - Healthy. Big clean-up campaigns (style-tag cleanup parts) ongoing — avoid those specific areas.
 
 ## Gap ledger
+- `2026-09-24` issue #27488 (whitespace-only TextInput reply submitted+classified instead of no-response) - outcome pr-opened (https://github.com/olitreadwell/oppia/pull/32) - lesson: real backend-logic bug from an open unclaimed upstream issue; submitAnswer guard + StateCard.showNoResponseError both treated only '' as no response. Fixed + spec cases added; locally-verified via node before/after repro + TS parse + prettier (oppia full suite needs oppia_tools, not feasible here; fork CI not connected).
 - `2026-09-03` self-found gap (trivial pass) - outcome pr-opened (https://github.com/olitreadwell/oppia/pull/1) - lesson: en.json/UI strings clean; genuine typos live in comments/docstrings; oppia CI not connected to forks so fork shows no runs.
 
 ## Mined gaps
