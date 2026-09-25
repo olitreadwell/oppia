@@ -83,7 +83,10 @@ export class StateCard {
     const notNumber = !(typeof currentAnswer === 'number');
     const isEmptyArray =
       Array.isArray(currentAnswer) && currentAnswer.length === 0;
-    const noResponse = notNumber && (isEmptyArray || !currentAnswer);
+    const isEmptyString =
+      typeof currentAnswer === 'string' && currentAnswer.trim() === '';
+    const noResponse =
+      notNumber && (isEmptyArray || isEmptyString || !currentAnswer);
     return noResponse && this.getInteraction().submitClicked;
   }
 
