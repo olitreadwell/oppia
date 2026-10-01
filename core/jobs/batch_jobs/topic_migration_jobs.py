@@ -139,7 +139,7 @@ class MigrateTopicModels(beam.PTransform):  # type: ignore[misc]
             pipeline
             | 'Get all non-deleted topic models'
             >> (ndb_io.GetModels(topic_models.TopicModel.get_all()))
-            # Pylint disable is needed becasue pylint is not able to correclty
+            # Pylint disable is needed because pylint is not able to correctly
             # detect that the value is passed through the pipe.
             | 'Add topic keys'
             >> beam.WithKeys(  # pylint: disable=no-value-for-parameter
