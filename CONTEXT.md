@@ -1,5 +1,5 @@
 # oppia/oppia context
-> refreshed 2026-10-01 | upstream default: develop @ 1f36809d9dc79a1bf74f1e0dc4d7f78a8a6e73f8
+> refreshed 2026-10-03 | upstream default: develop @ 011dd2efbb4332fd8c3c47f964a5446e0fb92031
 
 ## Identity & policies
 - upstream: oppia/oppia, default branch develop, primary lang Python + Angular/TS, English-first (yes — docs, wiki, issues all English).
@@ -31,3 +31,4 @@
 - none yet — this run does a trivial-fix pass (typos/dead links/stale commands) per engine/loop-trivial.sh.
 - `2026-09-09` self-found gap (trivial pass #2) - outcome pr-opened (https://github.com/olitreadwell/oppia/pull/11) - lesson: second typo pass found 31 more genuine misspellings across 10 files (comments/docstrings/error messages); en.json/UI strings still clean; oppia CI not connected to forks so fork shows no runs.
 - `2026-09-09` self-found gap (trivial pass #3) - outcome pr-opened (https://github.com/olitreadwell/oppia/pull/12) - lesson: dead links (pencilcode.html, ossf secure-sw-dev-fundamentals, drive video) verified 404 + typos in comments/docstrings/test descriptions across 10 files; oppia CI not connected to forks so fork shows no runs.
+- `2026-10-03` self-found gap (deploy/config) — `.gcloudignore` line 8 (`.*`) excludes the hidden `assets/.well-known/` directory, so `gcloud app deploy` never uploads `assets/.well-known/security.txt`. The handler in `app_dev.yaml` (lines 30-32) therefore points at a file that is absent from the deployment and `https://www.oppia.org/.well-known/security.txt` returns 404 (`curl -L` -> 404, while `/robots.txt` and `/sitemap.xml` -> 200). Repro against gcloud's own parser (`googlecloudsdk.command_lib.util.gcloudignore.FileChooser`) on the current `.gcloudignore`: `assets/.well-known/security.txt` -> SKIP; `.coveragerc`, `.github/`, `node_modules/` also SKIP (correct). Dedupe: upstream issues/PRs searched for `gcloudignore`, `security.txt`, `well-known` — no report of this 404 or of the `.*` exclusion (#16655 edited `.gcloudignore` only for markdown; #14724 added third-party ignores). Proposed fix: add `!assets/.well-known/` after the `.*` line so gcloud re-includes the directory while every other hidden path stays ignored. Proposed regression check: assert that no `static_files:`/`upload:` path named in `app_dev.yaml` is excluded by `.gcloudignore`. — status: proposed
