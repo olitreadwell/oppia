@@ -1806,7 +1806,7 @@ class SuggestionServicesUnitTests(test_utils.GenericTestBase):
             self.COMMIT_MESSAGE,
             'review message',
         )
-        # Verfiy that the suggestion has been accepted.
+        # Verify that the suggestion has been accepted.
         self.assert_suggestion_status(
             self.suggestion_id, suggestion_models.STATUS_ACCEPTED
         )
@@ -1831,7 +1831,7 @@ class SuggestionServicesUnitTests(test_utils.GenericTestBase):
                 resubmit_change,
             )
 
-        # Verfiy that the suggestion is still accepted.
+        # Verify that the suggestion is still accepted.
         self.assert_suggestion_status(
             self.suggestion_id, suggestion_models.STATUS_ACCEPTED
         )
@@ -9655,7 +9655,7 @@ class ContributorCertificateTests(test_utils.GenericTestBase):
     def _calculate_translation_contribution_hours(
         self, numer_of_words: int
     ) -> str:
-        """Provides translatoin contribution hours when number of translated
+        """Provides translation contribution hours when number of translated
         words are provided. We calculate the time taken to translate
         a word according to the following document.
         https://docs.google.com/spreadsheets/d/1ykSNwPLZ5qTCkuO21VLdtm_2SjJ5QJ0z0PlVjjSB4ZQ/edit#gid=0
@@ -9664,7 +9664,7 @@ class ContributorCertificateTests(test_utils.GenericTestBase):
             numer_of_words: int. The number of translated words.
 
         Returns:
-            str. A string that represent the translatoin contribution hours.
+            str. A string that represent the translation contribution hours.
         """
         return str(round(numer_of_words / 300, 2))
 

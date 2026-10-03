@@ -366,7 +366,7 @@ export class LearnerDashboardPageComponent implements OnInit, OnDestroy {
       .then(() => {
         setTimeout(() => {
           this.loaderService.hideLoadingScreen();
-          // So that focus is applied after the loading screen has dissapeared.
+          // So that focus is applied after the loading screen has disappeared.
           this.communityLessonsDataLoaded = true;
           this.focusManagerService.setFocusWithoutScroll('ourLessonsBtn');
         }, 0);
@@ -482,7 +482,7 @@ export class LearnerDashboardPageComponent implements OnInit, OnDestroy {
           setTimeout(() => {
             this.loaderService.hideLoadingScreen();
             this.communityLessonsDataLoaded = true;
-            // So that focus is applied after the loading screen has dissapeared.
+            // So that focus is applied after the loading screen has disappeared.
             this.focusManagerService.setFocusWithoutScroll('ourLessonsBtn');
           }, 0);
         })
@@ -545,7 +545,7 @@ export class LearnerDashboardPageComponent implements OnInit, OnDestroy {
           setTimeout(() => {
             this.loaderService.hideLoadingScreen();
             this.communityLessonsDataLoaded = true;
-            // So that focus is applied after the loading screen has dissapeared.
+            // So that focus is applied after the loading screen has disappeared.
             this.focusManagerService.setFocusWithoutScroll('ourLessonsBtn');
           }, 0);
         })
