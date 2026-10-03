@@ -23,11 +23,11 @@
  * angular has finished loading. This also contains services that are written
  * in angular but have to be accessed in ajs code.
  *
- * To have a new angular service accesible in ajs do the following:
+ * To have a new angular service accessible in ajs do the following:
  *   - import the service here.
  *   - create a static variable with the name of the service class in camelCase.
  *   - inject the service by providing it as an argument in the constructor.
- *   - in the ngAfterViewInit assign the serivce to the static varible
+ *   - in the ngAfterViewInit assign the service to the static variable
  *
  * Example:
  *   Let us assume that the service class is called MyService.
@@ -40,7 +40,7 @@
  *      ...
  *      private myService: MyService
  *     ...) {}
- *   - Then we assign the serivce to the static varible in ngAfterViewInit
+ *   - Then we assign the service to the static variable in ngAfterViewInit
  *     ngAfterViewInit() {
  *       ...
  *       OppiaAngularRootComponent.myService = this.myService

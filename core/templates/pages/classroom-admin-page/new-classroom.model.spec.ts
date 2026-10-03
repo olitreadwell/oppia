@@ -45,7 +45,7 @@ describe('Classroom admin model', () => {
     );
   });
 
-  it('should present error messgae when classroom name is empty', () => {
+  it('should present error message when classroom name is empty', () => {
     classroomData.setClassroomName('');
 
     expect(classroomData.getClassroomNameValidationErrors()).toEqual(
@@ -61,7 +61,7 @@ describe('Classroom admin model', () => {
     expect(classroomData.getClassroomNameValidationErrors()).toEqual('');
   });
 
-  it('should present error messgae when clasroom url fragment is empty', () => {
+  it('should present error message when classroom url fragment is empty', () => {
     classroomData.setUrlFragment('');
 
     expect(classroomData.getClassroomUrlValidationErrors()).toEqual(

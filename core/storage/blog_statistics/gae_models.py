@@ -54,7 +54,7 @@ class BlogPostViewedEventLogEntryModel(base_models.BaseModel):
         '[timestamp]:[blog_post_id]:[random_hash]'.
         """
 
-        # To avoid collision between events occuring at the same date and time,
+        # To avoid collision between events occurring at the same date and time,
         # a random hash is appended to the event model id.
         for _ in range(base_models.MAX_RETRIES):
             random_hash = utils.convert_to_hash(
@@ -129,7 +129,7 @@ class BlogPostReadEventLogEntryModel(base_models.BaseModel):
         '[timestamp]:[blog_post_id]:[random_hash]'.
         """
 
-        # To avoid collision between events occuring at the same date and time,
+        # To avoid collision between events occurring at the same date and time,
         # a random hash is appended to the event model id.
         for _ in range(base_models.MAX_RETRIES):
             random_hash = utils.convert_to_hash(
@@ -205,7 +205,7 @@ class BlogPostExitedEventLogEntryModel(base_models.BaseModel):
         '[timestamp]:[blog_post_id]:[random_hash]'.
         """
 
-        # To avoid collision between events occuring at the same date and time,
+        # To avoid collision between events occurring at the same date and time,
         # a random hash is appended to the event model id.
         for _ in range(base_models.MAX_RETRIES):
             random_hash = utils.convert_to_hash(

@@ -6267,7 +6267,7 @@ class NotifyAdminsSuggestionsWaitingTooLongForReviewEmailTests(
                 '<p>Question 1</p>', self.mocked_review_submission_datetime
             )
         )
-        # Question suggestion 2 has waited slighlty less time than question
+        # Question suggestion 2 has waited slightly less time than question
         # suggestion 1 so that the question suggestions are not
         # indistinguishable in terms of review wait time.
         question_suggestion_2 = (
@@ -6481,7 +6481,7 @@ class NotifyAdminsSuggestionsWaitingTooLongForReviewEmailTests(
                 self.mocked_review_submission_datetime,
             )
         )
-        # Translation suggestion 2 has waited slighlty less time than
+        # Translation suggestion 2 has waited slightly less time than
         # translation suggestion 1 so that the translation suggestions are not
         # indistinguishable in terms of review wait time.
         translation_suggestion_2 = (
@@ -6596,7 +6596,7 @@ class NotifyAdminsSuggestionsWaitingTooLongForReviewEmailTests(
                 self.mocked_review_submission_datetime,
             )
         )
-        # Suggestion 2 has waited slighlty less time than suggestion 1 so that
+        # Suggestion 2 has waited slightly less time than suggestion 1 so that
         # the suggestions are not indistinguishable in terms of review wait
         # time.
         suggestion_2 = (

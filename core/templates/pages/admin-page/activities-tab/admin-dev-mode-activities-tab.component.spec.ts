@@ -162,7 +162,7 @@ describe('Admin dev mode activities tab', () => {
       expect(adminBackendSpy).not.toHaveBeenCalled();
     });
 
-    it("should not procees if user doesn't confirm", () => {
+    it("should not process if user doesn't confirm", () => {
       mockConfirmResult(false);
 
       let adminBackendSpy = spyOn(
@@ -554,7 +554,7 @@ describe('Admin dev mode activities tab', () => {
     }));
 
     it(
-      'should show error message if new structues data' + 'is not generated',
+      'should show error message if new structures data' + 'is not generated',
       waitForAsync(() => {
         spyOn(
           adminBackendApiService,
@@ -597,7 +597,7 @@ describe('Admin dev mode activities tab', () => {
     }));
 
     it(
-      'should show error message if new structues data' + 'is not generated',
+      'should show error message if new structures data' + 'is not generated',
       waitForAsync(() => {
         spyOn(
           adminBackendApiService,

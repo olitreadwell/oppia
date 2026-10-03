@@ -346,7 +346,7 @@ class Top10AnswerFrequencies(BaseCalculation):
                 exploration information such as:
                 * exploration_id: id of the exploration.
                 * exploration_version: Specific version of the exploration or
-                    VERSION_ALL is used if answers are aggragated across
+                    VERSION_ALL is used if answers are aggregated across
                     multiple versions.
                 * state_name: Name of the state.
                 * interaction_id: id of the interaction.
@@ -400,7 +400,7 @@ class FrequencyCommonlySubmittedElements(BaseCalculation):
                 exploration information such as:
                 * exploration_id: id of the exploration.
                 * exploration_version: Specific version of the exploration or
-                    VERSION_ALL is used if answers are aggragated across
+                    VERSION_ALL is used if answers are aggregated across
                     multiple versions.
                 * state_name: Name of the state.
                 * interaction_id: id of the interaction.
@@ -466,7 +466,7 @@ class TopAnswersByCategorization(BaseCalculation):
                 exploration information such as:
                 * exploration_id: id of the exploration.
                 * exploration_version: Specific version of the exploration or
-                    VERSION_ALL is used if answers are aggragated across
+                    VERSION_ALL is used if answers are aggregated across
                     multiple versions.
                 * state_name: Name of the state.
                 * interaction_id: id of the interaction.
@@ -540,7 +540,7 @@ class TopNUnresolvedAnswersByFrequency(BaseCalculation):
                 exploration information such as:
                 * exploration_id: id of the exploration.
                 * exploration_version: Specific version of the exploration or
-                    VERSION_ALL is used if answers are aggragated across
+                    VERSION_ALL is used if answers are aggregated across
                     multiple versions.
                 * state_name: Name of the state.
                 * interaction_id: id of the interaction.

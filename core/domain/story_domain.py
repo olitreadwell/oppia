@@ -2753,7 +2753,7 @@ class Story:
         Args:
             node_id: str. The Id of the node.
             new_planned_publication_date_msecs: float. The planned publication
-                date of the node in miliseconds.
+                date of the node in milliseconds.
         """
         node_index = self.story_contents.get_node_index(node_id)
         self.story_contents.nodes[node_index].planned_publication_date = (
@@ -2772,7 +2772,7 @@ class Story:
         Args:
             node_id: str. The Id of the node.
             new_last_modified_msecs: float. The last modified date time
-                of the node in miliseconds.
+                of the node in milliseconds.
         """
         node_index = self.story_contents.get_node_index(node_id)
         self.story_contents.nodes[node_index].last_modified = (
@@ -2793,7 +2793,7 @@ class Story:
         Args:
             node_id: str. The Id of the node.
             new_publication_date_msecs: float. The first publication date
-                of the node in miliseconds.
+                of the node in milliseconds.
         """
         node_index = self.story_contents.get_node_index(node_id)
         self.story_contents.nodes[node_index].first_publication_date = (
