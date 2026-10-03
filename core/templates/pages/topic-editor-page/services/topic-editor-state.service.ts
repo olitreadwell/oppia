@@ -494,7 +494,7 @@ export class TopicEditorStateService {
 
   /**
    * Returns the current topic to be shared among the topic
-   * editor. Please note any changes to this topic will be propogated
+   * editor. Please note any changes to this topic will be propagated
    * to all bindings to it. This topic object will be retained for the
    * lifetime of the editor. This function never returns null, though it may
    * return an empty topic object if the topic has not yet been
@@ -518,7 +518,7 @@ export class TopicEditorStateService {
   /**
    * Returns the current subtopic page to be shared among the topic
    * editor. Please note any changes to this subtopic page will be
-   * propogated to all bindings to it. This subtopic page object will be
+   * propagated to all bindings to it. This subtopic page object will be
    * retained for the lifetime of the editor. This function never returns
    * null, though it may return an empty subtopic page object if the topic
    * has not yet been loaded for this editor instance.
@@ -530,7 +530,7 @@ export class TopicEditorStateService {
   /**
    * Returns the current study guide to be shared among the topic
    * editor. Please note any changes to this study guide will be
-   * propogated to all bindings to it. This study guide object will be
+   * propagated to all bindings to it. This study guide object will be
    * retained for the lifetime of the editor. This function never returns
    * null, though it may return an empty study guide object if the topic
    * has not yet been loaded for this editor instance.
@@ -550,7 +550,7 @@ export class TopicEditorStateService {
   /**
    * Returns the current topic rights to be shared among the topic
    * editor. Please note any changes to this topic rights will be
-   * propogated to all bindings to it. This topic rights object will
+   * propagated to all bindings to it. This topic rights object will
    * be retained for the lifetime of the editor. This function never returns
    * null, though it may return an empty topic rights object if the
    * topic rights has not yet been loaded for this editor instance.
@@ -560,7 +560,7 @@ export class TopicEditorStateService {
   }
 
   /**
-   * Sets the topic stored within this service, propogating changes to
+   * Sets the topic stored within this service, propagating changes to
    * all bindings to the topic returned by getTopic(). The first
    * time this is called it will fire a global event based on
    * onTopicInitialized. All subsequent
@@ -721,7 +721,7 @@ export class TopicEditorStateService {
   }
 
   /**
-   * Sets the topic rights stored within this service, propogating
+   * Sets the topic rights stored within this service, propagating
    * changes to all bindings to the topic returned by
    * getTopicRights().
    */

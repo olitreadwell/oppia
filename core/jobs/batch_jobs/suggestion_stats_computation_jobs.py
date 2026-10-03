@@ -630,7 +630,7 @@ class GenerateContributionStatsJob(base_jobs.JobBase):
         """Generates translation contribution stats for each suggestion.
 
         Args:
-            entity_id: str. The ID of the conrresponding stats model.
+            entity_id: str. The ID of the corresponding stats model.
             stat: ContributionStatsDict. The skill ID which the suggestion is
                 created for.
 
@@ -723,7 +723,7 @@ class GenerateContributionStatsJob(base_jobs.JobBase):
         """Generates translation review stats for each suggestion.
 
         Args:
-            entity_id: str. The ID of the conrresponding stats model.
+            entity_id: str. The ID of the corresponding stats model.
             stat: ContributionStatsDict. The skill ID which the suggestion is
                 created for.
 
@@ -807,7 +807,7 @@ class GenerateContributionStatsJob(base_jobs.JobBase):
         """Generates question contribution stats for each suggestion.
 
         Args:
-            entity_id: str. The ID of the conrresponding stats model.
+            entity_id: str. The ID of the corresponding stats model.
             stat: ContributionStatsDict. The skill ID which the suggestion is
                 created for.
 
@@ -883,7 +883,7 @@ class GenerateContributionStatsJob(base_jobs.JobBase):
         """Generates question review stats for each suggestion.
 
         Args:
-            entity_id: str. The ID of the conrresponding stats model.
+            entity_id: str. The ID of the corresponding stats model.
             stat: ContributionStatsDict. The skill ID which the suggestion is
                 created for.
 

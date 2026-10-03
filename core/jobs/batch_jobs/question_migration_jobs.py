@@ -100,7 +100,7 @@ class PopulateQuestionSummaryVersionOneOffJob(base_jobs.JobBase):
             self.pipeline
             | 'Get all non-deleted question models'
             >> (ndb_io.GetModels(question_models.QuestionModel.get_all()))
-            # Pylint disable is needed becasue pylint is not able to correclty
+            # Pylint disable is needed because pylint is not able to correctly
             # detect that the value is passed through the pipe.
             | 'Add question keys'
             >> beam.WithKeys(  # pylint: disable=no-value-for-parameter
@@ -197,7 +197,7 @@ class AuditPopulateQuestionSummaryVersionOneOffJob(base_jobs.JobBase):
             self.pipeline
             | 'Get all non-deleted question models'
             >> (ndb_io.GetModels(question_models.QuestionModel.get_all()))
-            # Pylint disable is needed becasue pylint is not able to correclty
+            # Pylint disable is needed because pylint is not able to correctly
             # detect that the value is passed through the pipe.
             | 'Add question keys'
             >> beam.WithKeys(  # pylint: disable=no-value-for-parameter
@@ -319,7 +319,7 @@ class MigrateQuestionModels(beam.PTransform):  # type: ignore[misc]
             pipeline
             | 'Get all non-deleted question models'
             >> (ndb_io.GetModels(question_models.QuestionModel.get_all()))
-            # Pylint disable is needed becasue pylint is not able to correclty
+            # Pylint disable is needed because pylint is not able to correctly
             # detect that the value is passed through the pipe.
             | 'Add question keys'
             >> beam.WithKeys(  # pylint: disable=no-value-for-parameter
