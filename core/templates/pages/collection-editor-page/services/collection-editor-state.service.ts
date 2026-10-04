@@ -119,7 +119,7 @@ export class CollectionEditorStateService {
 
   /**
    * Returns the current collection to be shared among the collection
-   * editor. Please note any changes to this collection will be propogated
+   * editor. Please note any changes to this collection will be propagated
    * to all bindings to it. This collection object will be retained for the
    * lifetime of the editor. This function never returns null, though it may
    * return an empty collection object if the collection has not yet been
@@ -132,7 +132,7 @@ export class CollectionEditorStateService {
   /**
    * Returns the current collection rights to be shared among the collection
    * editor. Please note any changes to this collection rights will be
-   * propogated to all bindings to it. This collection rights object will
+   * propagated to all bindings to it. This collection rights object will
    * be retained for the lifetime of the editor. This function never returns
    * null, though it may return an empty collection rights object if the
    * collection rights has not yet been loaded for this editor instance.
@@ -142,7 +142,7 @@ export class CollectionEditorStateService {
   }
 
   /**
-   * Sets the collection stored within this service, propogating changes to
+   * Sets the collection stored within this service, propagating changes to
    * all bindings to the collection returned by getCollection(). The first
    * time this is called it will fire a global event based on the
    * _collectionInitializedEventEmitter. All subsequent
@@ -154,7 +154,7 @@ export class CollectionEditorStateService {
   }
 
   /**
-   * Sets the collection rights stored within this service, propogating
+   * Sets the collection rights stored within this service, propagating
    * changes to all bindings to the collection returned by
    * getCollectionRights(). The first time this is called it will fire a
    * global event based on the EVENT_COLLECTION_INITIALIZED constant. All

@@ -105,7 +105,7 @@ class AppFeedbackReport:
                 report, or feconf.REPORT_SCRUBBER_BOT_ID if scrubbed by the
                 cron job.
             user_supplied_feedback: UserSuppliedFeedback. An object representing
-                the information fileld out by the user in the report.
+                the information field out by the user in the report.
             device_system_context: DeviceSystemContext. An object representing
                 the user's device and system information used to submit the
                 report.
@@ -555,7 +555,7 @@ class UserSuppliedFeedback:
             report_type: ReportType. The type of feedback submitted by the user
                 as an enum.
             category: Category. The category enum that this specific report_type
-                is providing feedback on that correponds.
+                is providing feedback on that corresponds.
             user_feedback_selected_items: list(str). A list of strings that
                 represent any options selected by the user for the feedback
                 they are providing in this feedback report.
@@ -748,7 +748,7 @@ class DeviceSystemContext:
 
     def to_dict(self) -> DeviceSystemContextDict:
         """Returns a dict representing this DeviceSystemContext domain object.
-        Subclasses should override this to propertly format any additional
+        Subclasses should override this to properly format any additional
         properties.
 
         Returns:
@@ -1081,7 +1081,7 @@ class AppContext:
 
     def to_dict(self) -> AppContextDict:
         """Returns a dict representing this AppContext domain object. Subclasses
-        should override this to propertly format any additional properties.
+        should override this to properly format any additional properties.
 
         Returns:
             dict. A dict, mapping all fields of AppContext instance.
@@ -1498,11 +1498,11 @@ class LessonPlayerEntryPoint(EntryPoint):
 
         Args:
             topic_id: str. The unique ID for the current topic the user is
-                playing when intiating the report.
+                playing when initiating the report.
             story_id: str. The unique ID for the current story the user is
-                playing when intiating the report.
+                playing when initiating the report.
             exploration_id: str. The unique ID for the current exploration the
-                user is playing when intiating the report.
+                user is playing when initiating the report.
         """
         super().__init__(
             app_feedback_report_constants.EntryPoint.LESSON_PLAYER,
@@ -1563,9 +1563,9 @@ class StudyGuideEntryPoint(EntryPoint):
 
         Args:
             topic_id: str. The unique ID for the current topic the user is
-                reviewing when intiating the report.
+                reviewing when initiating the report.
             subtopic_id: int. The ID for the current subtopic the user is
-                reviewing when intiating the report.
+                reviewing when initiating the report.
         """
         super().__init__(
             app_feedback_report_constants.EntryPoint.STUDY_GUIDE,
@@ -1899,7 +1899,7 @@ class AppFeedbackReportDailyStats:
         """Constructs a AppFeedbackReportDailyStats domain object.
 
         Args:
-            stats_id: str. The unique ID for ths stats instance.
+            stats_id: str. The unique ID for this stats instance.
             ticket: AppFeedbackReportTicket. The AppFeedbackReportTicket domain
                 object associated with this ticket.
             platform: str. The platform these report stats are aggregating for.
@@ -1908,7 +1908,7 @@ class AppFeedbackReportDailyStats:
             total_reports_submitted: int. The total number of reports submitted
                 on this date for this ticket.
             daily_param_stats: dict. A dict representing the statistics on this
-                date. Keys in this dict correpond to STATS_PARAMETER_NAMES
+                date. Keys in this dict correspond to STATS_PARAMETER_NAMES
                 enums, while values are ReportStatsParameterValueCounts objects.
         """
         self.stats_id = stats_id
@@ -2027,7 +2027,7 @@ class ReportStatsParameterValueCounts:
         """Constructs a ReportStatsParameterValueCounts domain object.
 
         Args:
-            parameter_value_counts: dict. A dict with keys that correpond to a
+            parameter_value_counts: dict. A dict with keys that correspond to a
                 specific value for a given parameter, and integer values for the
                 number of reports that satisfy that value.
         """
@@ -2084,7 +2084,7 @@ class AppFeedbackReportFilter:
 
         Args:
             filter_field: FilterFieldNames. The enum type for the filter
-                category, correponding to a field in the AppFeedbackReport
+                category, corresponding to a field in the AppFeedbackReport
                 object.
             filter_options: list(str). The possible values for the given filter.
         """

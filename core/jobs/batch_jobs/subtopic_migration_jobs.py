@@ -141,7 +141,7 @@ class MigrateStudyGuideModels(beam.PTransform):  # type: ignore[misc]
             pipeline
             | 'Get all non-deleted study guide models'
             >> (ndb_io.GetModels(subtopic_models.StudyGuideModel.get_all()))
-            # Pylint disable is needed becasue pylint is not able to correclty
+            # Pylint disable is needed because pylint is not able to correctly
             # detect that the value is passed through the pipe.
             | 'Add study guide keys'
             >> beam.WithKeys(  # pylint: disable=no-value-for-parameter
