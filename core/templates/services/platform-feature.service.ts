@@ -13,7 +13,7 @@
 // limitations under the License.
 
 /**
- * @fileoverview A service for retriving feature flags - boolean parameters
+ * @fileoverview A service for retrieving feature flags - boolean parameters
  * that are used to determine if features should be enabled.
  *
  * Once the initialization is done, the value of each feature flag is guaranteed
@@ -73,7 +73,7 @@ export class PlatformFeatureService {
   }
 
   /**
-   * Inializes the PlatformFeatureService. This function guarantees that the
+   * Initializes the PlatformFeatureService. This function guarantees that the
    * service is initialized only once for subsequent calls.
    *
    * @returns {Promise} - A promise that is resolved when the initialization
@@ -95,7 +95,7 @@ export class PlatformFeatureService {
    *   true).
    *
    * @returns {FeatureStatusChecker} - Status checker object for feature flags.
-   * @throws {Error} - If this method is called before inialization.
+   * @throws {Error} - If this method is called before initialization.
    */
   get status(): FeatureStatusChecker {
     if (PlatformFeatureService.featureStatusSummary) {

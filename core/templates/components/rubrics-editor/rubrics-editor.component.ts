@@ -119,7 +119,7 @@ export class RubricsEditorComponent {
   }
 
   isMediumLevelExplanationValid(): boolean {
-    // Checking if medium level rubrics have at least one explantion.
+    // Checking if medium level rubrics have at least one explanation.
     return (
       this.rubrics[this.MEDIUM_EXPLANATION_INDEX] &&
       this.rubrics[this.MEDIUM_EXPLANATION_INDEX].getExplanations().length >= 1

@@ -173,7 +173,7 @@ class BaseChange:
     # for the attribute. deprecated_values is a
     # dict with key as attribute name and value as deprecated values
     # for the attribute.
-    # This list can be overriden by subclasses, if needed.
+    # This list can be overridden by subclasses, if needed.
     ALLOWED_COMMANDS: List[feconf.ValidCmdDict] = []
 
     # The list of deprecated commands of a change domain object. Each item
@@ -183,7 +183,7 @@ class BaseChange:
     DEPRECATED_COMMANDS: List[str] = []
 
     # This is a list of common commands which is valid for all subclasses.
-    # This should not be overriden by subclasses.
+    # This should not be overridden by subclasses.
     COMMON_ALLOWED_COMMANDS: List[feconf.ValidCmdDict] = [
         {
             'name': feconf.CMD_DELETE_COMMIT,

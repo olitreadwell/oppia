@@ -37,7 +37,7 @@ export class CanAccessSplashPageGuard implements CanLoad {
           this.userService
             .getUserPreferredDashboardAsync()
             .then(preferredDashboard => {
-              // Use router.navigate once both learner dashbaord page and
+              // Use router.navigate once both learner dashboard page and
               // creator dashboard page are migrated to angular router.
               this.windowRef.nativeWindow.location.href =
                 '/' + preferredDashboard + '-dashboard';
