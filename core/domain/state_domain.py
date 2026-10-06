@@ -4507,7 +4507,7 @@ class State(translation_domain.BaseTranslatableObject):
                 schema v36).
             state_uses_old_rule_template_schema: bool. Whether the rule inputs
                 contain html in the form of DragAndDropHtmlString,
-                SetOfHtmlString, or ListOfSetsOfHtmlString (shoud be True if
+                SetOfHtmlString, or ListOfSetsOfHtmlString (should be True if
                 prior to state schema v42).
 
         Returns:

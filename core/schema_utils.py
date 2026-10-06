@@ -723,7 +723,7 @@ class _Validators:
     @staticmethod
     def is_regex_matched(obj: str, regex_pattern: str) -> bool:
         """Checks if a given string is matched with the provided regular
-        experssion.
+        expression.
 
         Args:
             obj: str. The string to verify.
@@ -776,7 +776,7 @@ class _Validators:
             max_value: int. The maximum allowed value for the obj.
 
         Returns:
-            bool. Whether the given object has length atmost the max_value.
+            bool. Whether the given object has length at most the max_value.
         """
         # Ruling out the possibility of different types for mypy type checking.
         assert isinstance(obj, dict)

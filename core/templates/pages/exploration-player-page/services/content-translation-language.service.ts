@@ -28,7 +28,7 @@ import {I18nLanguageCodeService} from 'services/i18n-language-code.service';
 
 export interface ExplorationLanguageInfo {
   /**
-   * This inteface is used to keep track of the audio language code (value)
+   * This interface is used to keep track of the audio language code (value)
    * and the audio language description to display (displayed) for the
    * _languagesInExploration property.
    */

@@ -238,7 +238,7 @@ export class ChangeListService {
 
   /**
    * Saves a change dict that represents adding a new state. It is the
-   * responsbility of the caller to check that the new state name is valid.
+   * responsibility of the caller to check that the new state name is valid.
    *
    * @param {string} stateName - The name of the newly-added state
    */
@@ -257,7 +257,7 @@ export class ChangeListService {
 
   /**
    * Saves a change dict that represents deleting a new state. It is the
-   * responsbility of the caller to check that the deleted state name
+   * responsibility of the caller to check that the deleted state name
    * corresponds to an existing state.
    *
    * @param {string} stateName - The name of the deleted state.

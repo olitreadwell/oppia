@@ -33,7 +33,7 @@ body:
   id: approaches
   attributes:
     label: Approaches already used to resolve the issue
-    description: "What appoaches have you tried to resolve the above issue?"
+    description: "What approaches have you tried to resolve the above issue?"
   validations:
     required: false
 - type: textarea

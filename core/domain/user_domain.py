@@ -667,7 +667,7 @@ class UserGroup:
         """Returns UserGroup domain object from dictionary.
 
         Args:
-            user_group_dict: UserGroupDict. A dictionary represention of
+            user_group_dict: UserGroupDict. A dictionary representation of
                 UserGroup object.
 
         Returns:
@@ -1799,7 +1799,7 @@ class TranslationCoordinatorStats:
         self.coordinators_count = coordinators_count
 
     def to_dict(self) -> TranslationCoordinatorStatsDict:
-        """Returns a dict representaion of TranslationCoordinatorStats.
+        """Returns a dict representation of TranslationCoordinatorStats.
 
         Returns: dict. The dict representation.
         """

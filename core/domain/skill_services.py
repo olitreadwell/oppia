@@ -488,7 +488,7 @@ def get_skill_summary_from_model(
             to get corresponding domain object.
 
     Returns:
-        SkillSummary. The domain object corresponding to given skill summmary
+        SkillSummary. The domain object corresponding to given skill summary
         model.
     """
     return skill_domain.SkillSummary(

@@ -470,7 +470,7 @@ def camelcase_to_hyphenated(camelcase_str: str) -> str:
         camelcase_str: str. Camelcase string representation.
 
     Returns:
-        str. Hypenated string representation of the camelcase string.
+        str. Hyphenated string representation of the camelcase string.
     """
     intermediate_str = re.sub('(.)([A-Z][a-z]+)', r'\1-\2', camelcase_str)
     return re.sub('([a-z0-9])([A-Z])', r'\1-\2', intermediate_str).lower()
@@ -498,7 +498,7 @@ def set_url_query_parameter(url: str, param_name: str, param_value: str) -> str:
         param_value: str. Set the parameter value, if it exists.
 
     Returns:
-        str. Formated URL that has query parameter set or replaced.
+        str. Formatted URL that has query parameter set or replaced.
 
     Raises:
         Exception. If the query parameter sent is not of string type,

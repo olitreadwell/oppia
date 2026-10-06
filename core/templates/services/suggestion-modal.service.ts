@@ -54,7 +54,7 @@ export class SuggestionModalService {
 
   /**
    * @param {object} paramDict - A ParamDict object which includes the
-   * the follwing keys:
+   * the following keys:
    * - action: action of the suggestion.
    * - audioUpdateRequired: whether audio files exist for the content
    *    being replace.
@@ -67,7 +67,7 @@ export class SuggestionModalService {
 
   /**
    * @param {object} paramDict - A ParamDict object which includes the
-   * the follwing keys:
+   * the following keys:
    * - action: action of the suggestion.
    * - audioUpdateRequired: whether audio files exist for the content
    *    being replace.

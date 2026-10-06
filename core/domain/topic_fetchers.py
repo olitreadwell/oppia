@@ -739,7 +739,7 @@ def get_all_topic_rights() -> Dict[str, topic_domain.TopicRights]:
 
 
 class CannonicalStoryDict(TypedDict):
-    """Dictionary that represents cannonical stories."""
+    """Dictionary that represents canonical stories."""
 
     id: str
     title: str

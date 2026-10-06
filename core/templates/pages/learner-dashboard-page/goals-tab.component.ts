@@ -298,7 +298,7 @@ export class GoalsTabComponent implements OnInit {
       });
   }
 
-  // TODO(#18384): Change how current goals is being modified with event emitter, currently directly modfiying parent input (original implementation).
+  // TODO(#18384): Change how current goals is being modified with event emitter, currently directly modifying parent input (original implementation).
   openModal(): void {
     const dialogConfig = new MatDialogConfig();
     const allTopics: {[id: string]: string} = this.editGoals.reduce(

@@ -141,9 +141,9 @@ export class I18nService {
         // When translation cache is initialized, language code stored in local
         // storage is used to set the site language. To have a single source of
         // truth, we first directly update the language code in local storage
-        // before intializing the translation cache, so that we always read the
+        // before initializing the translation cache, so that we always read the
         // language code from the local storage to set site language.
-        // This removes the need of continously syncing URL lang param and
+        // This removes the need of continuously syncing URL lang param and
         // cache, and avoids race conditions.
         this.setLocalStorageKeys(siteLanguageCode);
         this._updateDirection(

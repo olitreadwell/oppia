@@ -2959,7 +2959,7 @@ def get_next_page_of_all_non_private_commits(
         tuple. A 3-tuple consisting of:
             - list(ExplorationCommitLogEntry). A list containing
               ExplorationCommitlogEntry domain objects.
-            - str. The postion of the cursor.
+            - str. The position of the cursor.
             - bool. indicating whether there are (likely) more results after
               this batch. If False, there are no more results; if True, there
               are probably more results.
