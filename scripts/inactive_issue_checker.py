@@ -197,11 +197,11 @@ class GitHubService:
         The issue events endpoint does not return comments, so the issue
         timeline is used instead: it surfaces both comments and events. Only
         entries that represent an action *by* the assignee count as activity.
-        Auto-generated 'mentioned' and 'subscribed' entries are skipped because
-        GitHub attributes them to the user who was mentioned or subscribed.
-        Since the inactivity reminder posted by Oppiabot starts by mentioning
-        the assignee, counting those entries would treat the reminder itself as
-        activity and keep resetting the inactivity clock.
+        The 'mentioned' and 'subscribed' entries are skipped because GitHub
+        attributes them to the user who was mentioned or subscribed, not to the
+        user who wrote the comment. Since the inactivity reminder posted by
+        Oppiabot starts by mentioning the assignee, counting those entries would
+        treat the reminder itself as activity and keep resetting the clock.
 
         Args:
             issue: Issue. The issue to fetch timeline entries for.
