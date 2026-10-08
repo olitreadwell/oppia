@@ -235,7 +235,11 @@ class TestGitHubService(unittest.TestCase):
         ]
         mock_get.return_value = mock_response
 
-        issue = checker.Issue(1, 'user1', 'events_url')
+        events_url = 'https://api.github.com/repos/oppia/oppia/issues/1/events'
+        timeline_url = (
+            'https://api.github.com/repos/oppia/oppia/issues/1/timeline'
+        )
+        issue = checker.Issue(1, 'user1', events_url)
         latest_date = self.service.get_issue_events(issue)
 
         expected_date = datetime.datetime(
@@ -244,8 +248,86 @@ class TestGitHubService(unittest.TestCase):
         self.assertEqual(latest_date, expected_date)
 
         mock_get.assert_called_once_with(
-            issue.events_url, headers=self.service.rest_headers, timeout=10
+            timeline_url,
+            headers=self.service.rest_headers,
+            params={'per_page': 100},
+            timeout=10,
         )
+
+    @mock.patch('requests.get')
+    def test_get_issue_events_ignores_mention_and_subscription(
+        self, mock_get: mock.MagicMock
+    ) -> None:
+        """Test that being mentioned is not treated as assignee activity."""
+        mock_response = mock.Mock()
+        mock_response.status_code = 200
+        mock_response.json.return_value = [
+            {
+                'created_at': '2024-01-01T10:00:00Z',
+                'actor': {'login': 'user1'},
+                'event': 'assigned',
+            },
+            {
+                'created_at': '2024-01-05T10:00:00Z',
+                'actor': {'login': 'oppia-github-app[bot]'},
+                'event': 'commented',
+            },
+            {
+                'created_at': '2024-01-05T10:00:01Z',
+                'actor': {'login': 'user1'},
+                'event': 'mentioned',
+            },
+            {
+                'created_at': '2024-01-05T10:00:02Z',
+                'actor': {'login': 'user1'},
+                'event': 'subscribed',
+            },
+        ]
+        mock_get.return_value = mock_response
+
+        events_url = 'https://api.github.com/repos/oppia/oppia/issues/1/events'
+        issue = checker.Issue(1, 'user1', events_url)
+        latest_date = self.service.get_issue_events(issue)
+
+        expected_date = datetime.datetime(
+            2024, 1, 1, 10, 0, tzinfo=datetime.timezone.utc
+        )
+        self.assertEqual(latest_date, expected_date)
+
+    @mock.patch('requests.get')
+    def test_get_issue_events_counts_assignee_comments(
+        self, mock_get: mock.MagicMock
+    ) -> None:
+        """Test that comments made by the assignee count as activity."""
+        mock_response = mock.Mock()
+        mock_response.status_code = 200
+        mock_response.json.return_value = [
+            {
+                'created_at': '2024-01-01T10:00:00Z',
+                'actor': {'login': 'user1'},
+                'event': 'assigned',
+            },
+            {
+                'created_at': '2024-01-09T10:00:00Z',
+                'actor': {'login': 'oppia-github-app[bot]'},
+                'event': 'commented',
+            },
+            {
+                'created_at': '2024-01-10T10:00:00Z',
+                'actor': {'login': 'user1'},
+                'event': 'commented',
+            },
+        ]
+        mock_get.return_value = mock_response
+
+        events_url = 'https://api.github.com/repos/oppia/oppia/issues/1/events'
+        issue = checker.Issue(1, 'user1', events_url)
+        latest_date = self.service.get_issue_events(issue)
+
+        expected_date = datetime.datetime(
+            2024, 1, 10, 10, 0, tzinfo=datetime.timezone.utc
+        )
+        self.assertEqual(latest_date, expected_date)
 
     @mock.patch('requests.get')
     def test_get_issue_events_null_response(
@@ -254,14 +336,18 @@ class TestGitHubService(unittest.TestCase):
         """Test fetching issue events with null response."""
         mock_get.return_value = None
 
-        issue = checker.Issue(1, 'user1', 'events_url')
+        events_url = 'https://api.github.com/repos/oppia/oppia/issues/1/events'
+        issue = checker.Issue(1, 'user1', events_url)
         with self.assertRaises(AssertionError) as context:
             self.service.get_issue_events(issue)
         self.assertEqual(
             str(context.exception), 'Received null res while fetching events'
         )
         mock_get.assert_called_once_with(
-            issue.events_url, headers=self.service.rest_headers, timeout=10
+            'https://api.github.com/repos/oppia/oppia/issues/1/timeline',
+            headers=self.service.rest_headers,
+            params={'per_page': 100},
+            timeout=10,
         )
 
     @mock.patch('requests.get')
@@ -269,12 +355,16 @@ class TestGitHubService(unittest.TestCase):
         """Test fetching issue events with exception."""
         mock_get.side_effect = Exception('Network error')
 
-        issue = checker.Issue(1, 'user1', 'events_url')
+        events_url = 'https://api.github.com/repos/oppia/oppia/issues/1/events'
+        issue = checker.Issue(1, 'user1', events_url)
         with self.assertRaises(Exception) as context:
             self.service.get_issue_events(issue)
         self.assertEqual(str(context.exception), 'Network error')
         mock_get.assert_called_once_with(
-            issue.events_url, headers=self.service.rest_headers, timeout=10
+            'https://api.github.com/repos/oppia/oppia/issues/1/timeline',
+            headers=self.service.rest_headers,
+            params={'per_page': 100},
+            timeout=10,
         )
 
     @mock.patch('requests.get')
@@ -285,12 +375,16 @@ class TestGitHubService(unittest.TestCase):
         mock_response.json.return_value = []
         mock_get.return_value = mock_response
 
-        issue = checker.Issue(1, 'user1', 'events_url')
+        events_url = 'https://api.github.com/repos/oppia/oppia/issues/1/events'
+        issue = checker.Issue(1, 'user1', events_url)
         latest_date = self.service.get_issue_events(issue)
 
         self.assertIsNone(latest_date)
         mock_get.assert_called_once_with(
-            issue.events_url, headers=self.service.rest_headers, timeout=10
+            'https://api.github.com/repos/oppia/oppia/issues/1/timeline',
+            headers=self.service.rest_headers,
+            params={'per_page': 100},
+            timeout=10,
         )
 
     @mock.patch('requests.get')
@@ -312,12 +406,16 @@ class TestGitHubService(unittest.TestCase):
         ]
         mock_get.return_value = mock_response
 
-        issue = checker.Issue(1, 'user1', 'events_url')
+        events_url = 'https://api.github.com/repos/oppia/oppia/issues/1/events'
+        issue = checker.Issue(1, 'user1', events_url)
         latest_date = self.service.get_issue_events(issue)
 
         self.assertIsNone(latest_date)
         mock_get.assert_called_once_with(
-            issue.events_url, headers=self.service.rest_headers, timeout=10
+            'https://api.github.com/repos/oppia/oppia/issues/1/timeline',
+            headers=self.service.rest_headers,
+            params={'per_page': 100},
+            timeout=10,
         )
 
     @mock.patch('requests.post')

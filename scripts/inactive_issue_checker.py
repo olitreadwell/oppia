@@ -192,45 +192,56 @@ class GitHubService:
         return collaborators
 
     def get_issue_events(self, issue: Issue) -> Optional[datetime.datetime]:
-        """Fetches and processes events for an issue.
+        """Fetches the date of the assignee's latest activity on an issue.
+
+        The issue events endpoint does not return comments, so the issue
+        timeline is used instead: it surfaces both comments and events. Only
+        entries that represent an action *by* the assignee count as activity.
+        Auto-generated 'mentioned' and 'subscribed' entries are skipped because
+        GitHub attributes them to the user who was mentioned or subscribed.
+        Since the inactivity reminder posted by Oppiabot starts by mentioning
+        the assignee, counting those entries would treat the reminder itself as
+        activity and keep resetting the inactivity clock.
 
         Args:
-            issue: Issue. The issue to fetch events for.
+            issue: Issue. The issue to fetch timeline entries for.
 
         Returns:
-            Optional[datetime.datetime]. The date of the latest event, if any.
+            Optional[datetime.datetime]. The date of the assignee's latest
+            activity, if any.
 
         Raises:
             AssertionError. Raised if the response from the request is None.
             requests.HTTPError. Raised if the request fails.
         """
+        timeline_url = issue.events_url.replace('/events', '/timeline')
         response = requests.get(
-            issue.events_url, headers=self.rest_headers, timeout=10
+            timeline_url,
+            headers=self.rest_headers,
+            params={'per_page': 100},
+            timeout=10,
         )
         if response is None:
             raise AssertionError('Received null res while fetching events')
         response.raise_for_status()
 
-        events_dict = response.json()
-
-        if not events_dict:
-            return None
-
-        assignee_events = []
-        for event in events_dict:
-            if event.get('actor', {}).get('login') == issue.assignee_username:
-                assignee_events.append(event)
-
-        if not assignee_events:
-            return None
-
-        latest_event_date = max(
-            datetime.datetime.strptime(
-                event['created_at'], '%Y-%m-%dT%H:%M:%SZ'
+        latest_activity_date: Optional[datetime.datetime] = None
+        for entry in response.json():
+            if entry.get('event') in ('mentioned', 'subscribed'):
+                continue
+            actor_login = entry.get('actor', {}).get('login')
+            if actor_login != issue.assignee_username:
+                continue
+            entry_date = datetime.datetime.strptime(
+                entry['created_at'], '%Y-%m-%dT%H:%M:%SZ'
             ).replace(tzinfo=datetime.timezone.utc)
-            for event in assignee_events
-        )
-        return latest_event_date
+            if (
+                latest_activity_date is None
+                or entry_date > latest_activity_date
+            ):
+                latest_activity_date = entry_date
+
+        return latest_activity_date
 
     def get_issues_with_prs(self) -> Dict[int, Set[int]]:
         """Fetches mapping of issues to their linked PRs using GraphQL.
