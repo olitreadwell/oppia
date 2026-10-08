@@ -231,6 +231,7 @@ class TestGitHubService(unittest.TestCase):
         mock_response.json.return_value = [
             {'created_at': '2024-01-01T10:00:00Z', 'actor': {'login': 'user1'}},
             {'created_at': '2024-01-02T10:00:00Z', 'actor': {'login': 'user1'}},
+            {'created_at': '2024-01-02T10:00:00Z', 'actor': {'login': 'user1'}},
             {'created_at': '2024-01-03T10:00:00Z', 'actor': {'login': 'user2'}},
         ]
         mock_get.return_value = mock_response
