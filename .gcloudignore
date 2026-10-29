@@ -6,6 +6,10 @@
 *.swo
 *.bak
 .*
+# The .well-known directory holds the security.txt that app_dev.yaml serves
+# at /.well-known/security.txt. It has to be uploaded, so re-include it. A
+# directory that stays ignored cannot have its contents re-included later.
+!assets/.well-known/
 __pycache__/
 
 # Markdown files.
