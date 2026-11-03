@@ -26,9 +26,12 @@ import {TextInputCustomizationArgs} from 'interactions/customization-args-defs';
 import {InteractionAttributesExtractorService} from 'interactions/interaction-attributes-extractor.service';
 import {CurrentInteractionService} from 'pages/exploration-player-page/services/current-interaction.service';
 import {TextInputRulesService} from './text-input-rules.service';
+import {SchemaDefaultValue} from 'services/schema-default-value.service';
 
 interface TextInputSchema {
-  type: string;
+  // The object literal in ngOnInit assigns 'unicode', so the type is fixed to
+  // the literal to keep the schema assignable to the Schema type.
+  type: 'unicode';
   ui_config: {
     placeholder: string;
     rows: number;
@@ -124,7 +127,7 @@ export class InteractiveTextInputComponent implements OnInit {
   }
 
   submitAnswer(answer: string): void {
-    if (!answer) {
+    if (!answer || answer.trim() === '') {
       if (this.currentInteractionService.showNoResponseError()) {
         this.errorMessageI18nKey = 'I18N_INTERACTIONS_INPUT_NO_RESPONSE';
       }
@@ -133,7 +136,12 @@ export class InteractiveTextInputComponent implements OnInit {
     this.currentInteractionService.onSubmit(answer, this.textInputRulesService);
   }
 
-  updateAnswer(answer: string): void {
+  updateAnswer(answer: SchemaDefaultValue): void {
+    // The schema editor may emit non-string values (e.g. null) in some edge
+    // cases; only string values are valid text answers.
+    if (typeof answer !== 'string') {
+      return;
+    }
     if (this.answer === answer) {
       return;
     }

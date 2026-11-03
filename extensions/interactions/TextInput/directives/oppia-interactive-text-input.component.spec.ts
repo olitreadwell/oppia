@@ -201,6 +201,20 @@ describe('InteractiveTextInputComponent', () => {
     );
   });
 
+  it('should not submit a whitespace-only answer and display error', () => {
+    spyOn(currentInteractionService, 'onSubmit');
+    spyOn(currentInteractionService, 'showNoResponseError').and.returnValue(
+      true
+    );
+
+    component.submitAnswer('   ');
+
+    expect(currentInteractionService.onSubmit).not.toHaveBeenCalled();
+    expect(component.errorMessageI18nKey).toEqual(
+      'I18N_INTERACTIONS_INPUT_NO_RESPONSE'
+    );
+  });
+
   it('should update answer and reset error when user types answer', () => {
     const changeDetectorRef =
       fixture.debugElement.injector.get(ChangeDetectorRef);
@@ -235,5 +249,17 @@ describe('InteractiveTextInputComponent', () => {
 
     expect(component.answer).toBe('answers');
     expect(detectChangesSpy).not.toHaveBeenCalled();
+  });
+
+  it('should ignore a non-string update from the schema editor', () => {
+    spyOn(currentInteractionService, 'updateCurrentAnswer');
+    component.answer = 'answers';
+
+    component.updateAnswer(null);
+
+    expect(component.answer).toBe('answers');
+    expect(
+      currentInteractionService.updateCurrentAnswer
+    ).not.toHaveBeenCalled();
   });
 });
